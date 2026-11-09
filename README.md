@@ -21,3 +21,30 @@ pipreqs --ignore venv --force
 pip install -r requirements.txt
 ```
 
+## 在 docker 中安装 Postgres
+
+```bash
+# 拉取镜像
+docker pull postgres
+# 运行对应的容器服务
+docker run --name postgres-dev -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=postgres -p 15432:5432 -d postgres
+
+# 查看启动的服务
+docker ps
+# 关闭对应的服务
+docker stop postgres-dev
+```
+
+### 创建数据库
+
+```bash
+psql -U postgres -h localhost -W
+
+# 查看有什么数据库
+\l
+
+```
+
+```postgresql
+create database llmpos;
+```
