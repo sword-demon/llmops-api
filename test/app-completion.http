@@ -1,0 +1,8 @@
+POST http://localhost:5000/app/completion
+Content-Type: application/json
+
+{
+  "query": "我想学习 python，你能给我一些建议么？"
+}
+
+###

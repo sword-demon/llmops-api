@@ -48,3 +48,17 @@ psql -U postgres -h localhost -W
 ```postgresql
 create database llmpos;
 ```
+
+## 安装 openai 的 库
+
+```bash
+pip install --upgrade openai
+```
+
+## 安装 `python-dotenv` 来获取 `.env` 文件内的环境变量
+
+```bash
+pip install python-dotenv
+```
+
+可以通过`os.getenv('OPENAI_API_BASE')` 来获取 `.env`里的变量
