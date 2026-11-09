@@ -3,7 +3,7 @@
 @File    : __init__.py.py
 @Author  : wxvirus
 @Time    : 2026/11/9 20:38
-@Desc    : 
+@Desc    : 构建的应用，与 app 文件夹对应
 """
 
 from .http import Http
