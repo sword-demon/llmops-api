@@ -1,0 +1,7 @@
+# -*- coding: utf-8 -*-
+"""
+@File    : __init__.py.py
+@Author  : wxvirus
+@Time    : 2026/11/9 20:06
+@Desc    : 大语言模型的核心文件
+"""
