@@ -5,3 +5,7 @@
 @Time    : 2026/11/9 20:10
 @Desc    : 
 """
+
+from .config import Config
+
+__all__ = ['Config']

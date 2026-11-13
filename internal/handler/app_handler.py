@@ -9,6 +9,7 @@ import os
 
 from flask import request
 from openai import OpenAI
+from internal.schema.app_schema import CompletionReq
 
 
 class AppHandler:
@@ -25,7 +26,11 @@ class AppHandler:
         3. 得到请求响应，然后将 OpenAI 的响应传递给前端
         """
 
-        query = request.json.get('query')
+        req = CompletionReq()
+        if not req.validate():
+            return req.errors
+
+        # query = request.json.get('query')
         client = OpenAI(
             base_url=os.getenv('OPENAI_API_BASE'),
         )
@@ -34,7 +39,7 @@ class AppHandler:
             model='gpt-6-astra',
             messages=[
                 {'role': 'system', 'content': '你是 OpenAI 开发的聊天机器人，请根据用户的输入回复对应的信息'},
-                {'role': 'user', 'content': query}
+                {'role': 'user', 'content': req.query.data}
             ]
         )
 

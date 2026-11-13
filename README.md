@@ -62,3 +62,9 @@ pip install python-dotenv
 ```
 
 可以通过`os.getenv('OPENAI_API_BASE')` 来获取 `.env`里的变量
+
+## 安装 Flask-WTF
+
+```bash
+pip install -U Flask-WTF
+```
