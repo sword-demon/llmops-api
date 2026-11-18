@@ -10,13 +10,15 @@ import os
 from flask import request
 from openai import OpenAI
 from internal.schema.app_schema import CompletionReq
+from internal.exception import FailException
+from pkg.response.response import success_json
 
 
 class AppHandler:
     """应用控制器"""
 
     def ping(self):
-        return {"ping": "pong"}
+        raise FailException("ping失败")
 
     def completion(self):
         """
@@ -45,4 +47,4 @@ class AppHandler:
 
         content = completion.choices[0].message.content
 
-        return content
+        return success_json({"content": content})
