@@ -68,3 +68,29 @@ pip install python-dotenv
 ```bash
 pip install -U Flask-WTF
 ```
+
+## 安装 PyTest
+
+```bash
+pip install pytest
+```
+
+1. 测试文件以`test_`开头，或 `_test`结尾
+2. 测试类以`Test`开头，且不能带有`init`方法
+3. 测试函数以`test_`开头
+4. 断言使用基本的`assert`即可
+
+```bash
+pytest folder_name
+
+pytest test_file.py
+
+pytest test_file.py::test_func
+
+pytest test_file.py::TestClass::test_method
+
+pytest -v
+pytest -s
+
+pytest -s -v
+```
